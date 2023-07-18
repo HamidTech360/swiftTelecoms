@@ -1,0 +1,10 @@
+body{
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+@font-face {
+    font-family: saliec;
+    src: url(../../assets/fonts/sailec.ttf);
+}

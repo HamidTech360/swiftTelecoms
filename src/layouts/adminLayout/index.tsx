@@ -55,7 +55,7 @@ const AdminLayout = () => {
           <img src="../../assets/logo.png" alt="" />
         </div>
         <div className="mt-10">
-          {navOptions.map((item) => (
+          {navOptions.map((item, i) => (
             <Link key={i} to={item.link} style={{ textDecoration: 'none' }}>
               <NavItem active={item.paths.includes(currentPath)}>
                 <item.icon size={22} className="mr-3" />

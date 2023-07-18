@@ -1,34 +1,18 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import AccountType from '../screens/Auth/AccountType';
-import CompanyDetails from '../screens/Auth/CompanyDetails';
-import AddressDetails from '../screens/Auth/AddressDetails';
-import ChoosePassword from '../screens/Auth/ChoosePassword';
-import InviteTeam from '../screens/Auth/InviteTeam';
+
 import AdminLayout from '../layouts/adminLayout';
-import BillingAndShipping from '../screens/User/billingAddress';
-import AccountDetails from '../screens/User/accountDetails';
+import Login from '../screens/Auth/Login';
+import SignUp from '../screens/Auth/SignUp';
 
 const AllRoutes = createBrowserRouter([
     {
         path:'/',
-        element: <AccountType/>
+        element:<Login/>
     },
     {
-        path:'/company-details',
-        element: <CompanyDetails/>
-    },
-    {
-        path:'/address-details',
-        element: <AddressDetails/>
-    },
-    {
-        path:'/choose-password',
-        element: <ChoosePassword/>
-    },
-    {
-        path:'/invite-team',
-        element: <InviteTeam/>
+        path:'/register',
+        element:<SignUp/>
     },
     {
         path:'/user',
@@ -36,31 +20,27 @@ const AllRoutes = createBrowserRouter([
         children:[
             {
                 path: "dashboard",
-                element:<AccountDetails/>,
+                element:<h1>hello world</h1>,
             },
             {
-                path: "order-management",
-                element: <h1>hello world</h1>,
+                path: "workspace",
+                element:<h1>hello world</h1>,
             },
             {
-                path: "invoice-history",
-                element: <h1>hello world</h1>,
+                path: "assets",
+                element:<h1>hello world</h1>,
             },
             {
-                path: "service-tickets",
-                element: <h1>hello world</h1>,
+                path: "tasks",
+                element:<h1>hello world</h1>,
             },
             {
-                path: "billing",
-                element: <BillingAndShipping/>,
+                path: "documentation",
+                element:<h1>hello world</h1>,
             },
             {
-                path: "equipment-history",
-                element: <h1>hello world</h1>,
-            },
-            {
-                path: "account-details",
-                element: <h1>hello world</h1>,
+                path: "settings",
+                element:<h1>hello world</h1>,
             },
         ]
     }

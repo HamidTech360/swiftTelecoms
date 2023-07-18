@@ -25,7 +25,7 @@ const Login = () => {
             <div className="mt-5"><AuthButton>Sign In</AuthButton></div>
             <div style={{fontFamily:'inter'}} className="mt-3 mb- text-sm text-center">
                 <span className="text-gray-500">Don't have an account?  </span>
-                <Link to="/" style={{color:'#7F56D9', textDecoration:'none'}}>Sign Up</Link>
+                <Link to="/register" style={{color:'#7F56D9', textDecoration:'none'}}>Sign Up</Link>
             </div>
         </AuthLayout>
      );

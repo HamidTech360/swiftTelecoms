@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import AdminLayout from '../layouts/adminLayout';
 import Login from '../screens/Auth/Login';
 import SignUp from '../screens/Auth/SignUp';
+import Dashboard from '../screens/User/dashboard';
 
 const AllRoutes = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const AllRoutes = createBrowserRouter([
         children:[
             {
                 path: "dashboard",
-                element:<h1>hello world</h1>,
+                element:<Dashboard/>,
             },
             {
                 path: "workspace",

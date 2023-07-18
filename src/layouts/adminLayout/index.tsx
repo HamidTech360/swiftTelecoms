@@ -67,13 +67,13 @@ const AdminLayout = () => {
       </SideGrid>
 
       <div
-        className="flex-1 px-5 sm:px-10"
-        style={{ overflowY: 'scroll', height: '100vh' }}
+        className="flex-1 py-7 px-3 sm:px-10"
+        style={{ overflowY: 'scroll', maxHeight: '100vh' }}
       >
-        <div></div>
-        <div className="">
+        
+       
           <Outlet />
-        </div>
+        
       </div>
     </div>
   )

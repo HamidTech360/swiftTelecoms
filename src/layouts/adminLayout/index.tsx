@@ -70,10 +70,7 @@ const AdminLayout = () => {
         className="flex-1 py-7 px-3 sm:px-10"
         style={{ overflowY: 'scroll', maxHeight: '100vh' }}
       >
-        
-       
-          <Outlet />
-        
+        <Outlet />
       </div>
     </div>
   )

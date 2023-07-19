@@ -14,6 +14,7 @@ const AllRoutes = createBrowserRouter([
     path: '/register',
     element: <SignUp />,
   },
+  
   {
     path: '/user',
     element: <AdminLayout />,

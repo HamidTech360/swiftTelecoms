@@ -4,6 +4,7 @@ import AdminLayout from '../layouts/adminLayout'
 import Login from '../screens/Auth/Login'
 import SignUp from '../screens/Auth/SignUp'
 import Dashboard from '../screens/User/dashboard'
+import Tasks from '../screens/User/tasks'
 
 const AllRoutes = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const AllRoutes = createBrowserRouter([
     path: '/register',
     element: <SignUp />,
   },
-  
+
   {
     path: '/user',
     element: <AdminLayout />,
@@ -25,7 +26,7 @@ const AllRoutes = createBrowserRouter([
       },
       {
         path: 'workspace',
-        element: <h1>hello world</h1>,
+        element: <Tasks />,
       },
       {
         path: 'assets',

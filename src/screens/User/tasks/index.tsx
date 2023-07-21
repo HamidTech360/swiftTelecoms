@@ -52,9 +52,9 @@ const Tasks = () => {
           </div>
 
           <div className="grid mt-10 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-5">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, i) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
               <div
-                key={i}
+                key={item}
                 className="rounded-lg flex flex-col h-44 px-3 py-4"
                 style={{ border: '1px solid #D0D5DD', color: '#737373' }}
               >
@@ -65,9 +65,9 @@ const Tasks = () => {
                 </div>
                 <div className="flex flex-1 items-end">
                   <div className="flex">
-                    {[1, 2, 3].map((item, i) => (
+                    {[1, 2, 3].map((item) => (
                       <img
-                        key={i}
+                        key={item}
                         className="h-8 mr-2 w-8 rounded-full object-cover"
                         style={{ border: '1px solid grey' }}
                         src="../../../assets/man.jpg"

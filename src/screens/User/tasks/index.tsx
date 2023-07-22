@@ -59,7 +59,7 @@ const Tasks = () => {
                 style={{ border: '1px solid #D0D5DD', color: '#737373' }}
               >
                 <div className="font-semibold mb-3">Landing Page</div>
-                <div className="text-md">
+                <div className="text-sm">
                   This project plans to project the agenda of a billion space of
                   stars...
                 </div>
@@ -68,7 +68,7 @@ const Tasks = () => {
                     {[1, 2, 3].map((item) => (
                       <img
                         key={item}
-                        className="h-8 mr-2 w-8 rounded-full object-cover"
+                        className="h-8 mr-1 w-8 rounded-full object-cover"
                         style={{ border: '1px solid grey' }}
                         src="../../../assets/man.jpg"
                         alt=""
@@ -89,11 +89,6 @@ const Tasks = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* This hadles The rightBar */}
-        <div className="rightBar sm:block hidden">
-          {/* Rightbar contens goes here */}
         </div>
       </div>
     </div>

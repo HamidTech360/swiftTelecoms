@@ -1,7 +1,7 @@
 import { Outlet, useLocation, Link } from 'react-router-dom'
 import { BiBarChartSquare } from 'react-icons/bi'
 import { TbHexagon3D } from 'react-icons/tb'
-import { AiOutlineFile, AiOutlineSetting } from 'react-icons/ai'
+import { AiOutlineFile, AiOutlineSetting, AiOutlineRight } from 'react-icons/ai'
 import { GoTasklist } from 'react-icons/go'
 import { PiFolderNotchMinusLight } from 'react-icons/pi'
 import { NavItem, SideGrid } from './adminlayout.style'
@@ -72,6 +72,68 @@ const AdminLayout = () => {
       >
         <Outlet />
       </div>
+
+      {/* This hadles The rightBar */}
+      {currentPath === '/user/workspace' && (
+        <div
+          className="2xl:flex py-10 px-5 hidden w-72   flex-col"
+          style={{ maxHeight: '100vh', overflow: 'hidden' }}
+        >
+          <div
+            className="rounded px-3 h-20 flex items-center"
+            style={{ border: '1px solid #D0D5DD', color: '#737373' }}
+          >
+            <div className="flex-1">
+              <div className="font-bold text-2xl text-black">30</div>
+              <div className="text-sm">In Progress</div>
+            </div>
+
+            <div className="flex-1">
+              <div className="font-bold text-2xl text-black">30</div>
+              <div className="text-sm">Review</div>
+            </div>
+
+            <div className="flex-1">
+              <div className="font-bold text-2xl text-black">30</div>
+              <div className="text-sm">Upcoming</div>
+            </div>
+          </div>
+
+          <div
+            className="flex-1 mt-7 rounded-lg py-7 px-3"
+            style={{ border: '1px solid #D0D5DD', color: '#737373' }}
+          >
+            <div className="text-black ">
+              <span className="font-semibold text-2xl">Folders</span>
+              <AiOutlineRight
+                size={25}
+                color="#1C1D21"
+                className="float-right"
+              />
+            </div>
+
+            <div className="mt-7">
+              {[1, 2, 3, 4].map((item) => (
+                <div key={item} className="flex mb-5">
+                  <div
+                    style={{ background: '#F2EEFB', color: '#7F56D9' }}
+                    className="h-10 font-semibold w-10 flex rounded-full justify-center items-center"
+                  >
+                    I
+                  </div>
+                  <div className="ml-5 flex-1">
+                    <div className="font-semibold">Illustration</div>
+                    <div className="text-sm mt-1" style={{}}>
+                      This folder contains illustrators used for the first
+                      build.
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

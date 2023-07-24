@@ -5,6 +5,7 @@ import Login from '../screens/Auth/Login'
 import SignUp from '../screens/Auth/SignUp'
 import Dashboard from '../screens/User/dashboard'
 import Tasks from '../screens/User/tasks'
+import Assets from '../screens/User/assets'
 
 const AllRoutes = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const AllRoutes = createBrowserRouter([
       },
       {
         path: 'assets',
-        element: <h1>hello world</h1>,
+        element: <Assets />,
       },
       {
         path: 'tasks',

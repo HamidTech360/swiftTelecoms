@@ -5,7 +5,7 @@ import CustomPieChart from '../../../components/charts/piechart'
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className='pb-14'>
       <div className="flex">
         <Header>Overview</Header>
         <div className="flex-1 flex justify-end">
@@ -28,9 +28,9 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid 2xl:grid-cols-2 grid-cols-1 mt-10 gap-x-7 gap-y-5">
+      <div className="grid 2xl:grid-cols-1 grid-cols-1 mt-10 gap-x-7 gap-y-5">
         {/* box1 */}
-        <div
+        {/* <div
           className="rounded-lg"
           style={{ border: '1px solid lightgray', minHeight: '250px' }}
         >
@@ -46,7 +46,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* box2*/}
         <div
@@ -110,10 +110,10 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div
+      {/* <div
         className="mt-10 rounded-lg"
         style={{ border: '1px solid lightgray', minHeight: '250px' }}
-      ></div>
+      ></div> */}
     </div>
   )
 }

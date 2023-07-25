@@ -8,4 +8,8 @@ export const AuthButton = styled.button.attrs({
     color:white;
     width:100%;
     font-family:inter;
+
+    &:disabled {
+        opacity: 0.5;
+    }
 `

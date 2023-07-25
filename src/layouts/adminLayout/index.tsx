@@ -1,4 +1,5 @@
-import { Outlet, useLocation, Link } from 'react-router-dom'
+import { Outlet, useLocation, Link, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import { BiBarChartSquare } from 'react-icons/bi'
 import { TbHexagon3D } from 'react-icons/tb'
 import { AiOutlineFile, AiOutlineSetting, AiOutlineRight } from 'react-icons/ai'
@@ -8,6 +9,7 @@ import { NavItem, SideGrid } from './adminlayout.style'
 
 const AdminLayout = () => {
   const location = useLocation()
+  const navigate = useNavigate()
   const currentPath = location.pathname
   const navOptions = [
     {
@@ -48,6 +50,12 @@ const AdminLayout = () => {
     },
   ]
 
+  const token = localStorage.getItem('token')
+  useEffect(()=>{
+    if(!token){
+      return navigate('/')
+    }
+  }, [])
   return (
     <div className="flex" style={{ height: '100vh' }}>
       <SideGrid>

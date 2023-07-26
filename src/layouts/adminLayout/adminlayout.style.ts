@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface INav {
-    active:boolean;
+    active?:boolean;
 }
 
 export const P = styled.div.attrs({})`

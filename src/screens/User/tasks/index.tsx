@@ -16,7 +16,7 @@ const Tasks = () => {
   const [navOptions, setNavOptions] = useState([
     { label: 'In Progress', active: true },
     { label: 'Review' },
-    { label: 'Finished' },
+    { label: 'Done' },
   ])
 
   const [formData, setFormData] = useState({

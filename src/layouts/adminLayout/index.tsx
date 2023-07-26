@@ -34,25 +34,7 @@ const AdminLayout = () => {
       paths: ['/user/assets'],
       link: '/user/assets',
       icon: AiOutlineFile,
-    },
-    {
-      label: 'My Tasks',
-      paths: ['/user/tasks'],
-      link: '/user/tasks',
-      icon: GoTasklist,
-    },
-    {
-      label: 'Documentation',
-      paths: ['/user/documentation'],
-      link: '/user/documentation',
-      icon: PiFolderNotchMinusLight,
-    },
-    {
-      label: 'Settings',
-      paths: ['/user/settings'],
-      link: '/user/settings',
-      icon: AiOutlineSetting,
-    },
+    }
   ]
   const [isModalOpen, setIsModalOpen] = useState(false)
   const token = localStorage.getItem('token')
@@ -141,7 +123,7 @@ const AdminLayout = () => {
             </Link>
           ))}
            <NavItem onClick={()=>{
-                localStorage.clear()
+                localStorage.removeItem('token')
                 navigate('/')
            }} >
               <AiOutlineLogout size={22} className="mr-3" />
@@ -258,7 +240,7 @@ const AdminLayout = () => {
                   />
                 </div>
               <div className='mb-3'>
-                  <div className="mb-1 font-medum">Task description</div>
+                  <div className="mb-1 font-medum">Workspace description</div>
                   <TextArea 
                     name='description' 
                     rows={7}

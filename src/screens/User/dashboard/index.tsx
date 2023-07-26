@@ -21,10 +21,10 @@ const Dashboard = () => {
 
       <div className="mt-10">
         <div className="grid grid-cols-2 sm:grid-cols-2 2xl:grid-cols-4 gap-x-2 sm:gap-x-5 gap-y-5">
-          <Card label="Completed Tasks" taskCount={100} color="" />
-          <Card label="Uncompleted Tasks" taskCount={100} color="" />
-          <Card label="Overdue Tasks" taskCount={100} color="" />
-          <Card label="Total Tasks" taskCount={100} color="" />
+          <Card label="Completed Tasks" taskCount={17} colors={['#F2EEFB','#7F56D9']} />
+          <Card label="Uncompleted Tasks" taskCount={25} colors={['#EEF7FB','#56ADD9']} />
+          <Card label="Overdue Tasks" taskCount={23} colors={['#FBEFEE','#D96156']} />
+          <Card label="Total Tasks" taskCount={65} colors={['#EEF7FB','#56ADD9']} />
         </div>
       </div>
 
@@ -51,7 +51,7 @@ const Dashboard = () => {
         {/* box2*/}
         <div
           className="rounded-lg flex flex-col  px-5 py-3"
-          style={{ border: '1px solid lightgray', minHeight: '250px' }}
+          style={{ border: '1px solid lightgray', minHeight: '350px' }}
         >
           <div className="text-lg flex font-semibold mb-3">
             All tasks by completion status
@@ -73,7 +73,7 @@ const Dashboard = () => {
             <div className="w-1/2 ">
               <div
                 className="rounded mb-2 w-full lg:w-1/2 h-2/5"
-                style={{ border: '1px solid #5D4F7A' }}
+                style={{ border: '2px solid #5D4F7A' }}
               >
                 <div
                   className="h-2/3 flex justify-center items-center font-semibold"
@@ -90,7 +90,7 @@ const Dashboard = () => {
               </div>
               <div
                 className="rounded xl:ml-28 w-full lg:w-1/2 h-2/5"
-                style={{ border: '1px solid #C896EC' }}
+                style={{ border: '2px solid #C896EC' }}
               >
                 <div
                   className="h-2/3 flex justify-center items-center font-bold"

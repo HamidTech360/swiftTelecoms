@@ -35,15 +35,15 @@ const AllRoutes = createBrowserRouter([
       },
       {
         path: 'tasks',
-        element: <h1>hello world</h1>,
+        element: <div></div>,
       },
       {
         path: 'documentation',
-        element: <h1>hello world</h1>,
+        element: <div></div>,
       },
       {
         path: 'settings',
-        element: <h1>hello world</h1>,
+        element: <div></div>,
       },
     ],
   },

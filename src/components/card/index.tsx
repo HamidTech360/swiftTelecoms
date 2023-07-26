@@ -1,7 +1,7 @@
 import { Card as Cards } from '../../screens/User/dashboard/dashboard.style'
 import { BiFilterAlt } from 'react-icons/bi'
 
-const Card = ({ label, taskCount }: any) => {
+const Card = ({ label, taskCount, colors }: any) => {
   return (
     <Cards>
       <div className="sm:text-lg text-sm text-gray-500 font-medium">
@@ -15,7 +15,7 @@ const Card = ({ label, taskCount }: any) => {
           </div>
           <div
             className="float-right sm:px-2 px-1 sm:py-2 py-1 flex items-center rounded-md mt-3  h-7"
-            style={{ background: '#F2EEFB', color: '#7F56D9' }}
+            style={{ background: colors[0], color: colors[1]}}
           >
             <BiFilterAlt size={20} className="sm:mr-2 mr-1" />
             <span className="text-xs">Filter</span>

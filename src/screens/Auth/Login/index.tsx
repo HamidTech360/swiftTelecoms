@@ -31,6 +31,7 @@ const Login = () => {
             const {data} = await axios.post(`${apiUrl}/login`, formData)
             seterrorMsg(null)
             localStorage.setItem('token', data?.token)
+            localStorage.setItem('username', data?.username)
             navigate('/user/dashboard')
            console.log(data);
            

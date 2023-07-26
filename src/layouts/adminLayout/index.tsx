@@ -7,9 +7,9 @@ import { ModalContent } from '../../screens/User/tasks/tasks.style'
 import { useEffect, useState } from 'react'
 import { BiBarChartSquare } from 'react-icons/bi'
 import { TbHexagon3D } from 'react-icons/tb'
-import { AiOutlineFile, AiOutlineSetting,  AiOutlinePlusCircle, AiOutlineClose, AiOutlineLogout } from 'react-icons/ai'
-import { GoTasklist } from 'react-icons/go'
-import { PiFolderNotchMinusLight } from 'react-icons/pi'
+import { AiOutlineFile,  AiOutlinePlusCircle, AiOutlineClose, AiOutlineLogout } from 'react-icons/ai'
+// import { GoTasklist } from 'react-icons/go'
+// import { PiFolderNotchMinusLight } from 'react-icons/pi'
 import { NavItem, SideGrid } from './adminlayout.style'
 
 const AdminLayout = () => {

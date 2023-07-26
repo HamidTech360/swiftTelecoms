@@ -7,7 +7,7 @@ import { ModalContent } from '../../screens/User/tasks/tasks.style'
 import { useEffect, useState } from 'react'
 import { BiBarChartSquare } from 'react-icons/bi'
 import { TbHexagon3D } from 'react-icons/tb'
-import { AiOutlineFile, AiOutlineSetting,  AiOutlinePlusCircle, AiOutlineClose } from 'react-icons/ai'
+import { AiOutlineFile, AiOutlineSetting,  AiOutlinePlusCircle, AiOutlineClose, AiOutlineLogout } from 'react-icons/ai'
 import { GoTasklist } from 'react-icons/go'
 import { PiFolderNotchMinusLight } from 'react-icons/pi'
 import { NavItem, SideGrid } from './adminlayout.style'
@@ -140,6 +140,13 @@ const AdminLayout = () => {
               </NavItem>
             </Link>
           ))}
+           <NavItem onClick={()=>{
+                localStorage.clear()
+                navigate('/')
+           }} >
+              <AiOutlineLogout size={22} className="mr-3" />
+              Logout
+            </NavItem>
         </div>
       </SideGrid>
 

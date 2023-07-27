@@ -152,7 +152,7 @@ const AdminLayout = () => {
       {/* This hadles The rightBar */}
       {(currentPath === '/user/workspace' || currentPath === '/user/assets') && (
         <div
-          className="2xl:flex py-10 px-5 hidden w-72   flex-col"
+          className=" py-10 px-5  w-72   flex-col"
           style={{ maxHeight: '100vh', overflow: 'hidden' }}
         >
           <div

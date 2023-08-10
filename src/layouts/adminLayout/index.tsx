@@ -40,7 +40,7 @@ const AdminLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const token = localStorage.getItem('token')
    //@ts-ignore
-   const savedWorkSPaces = JSON.parse(localStorage.getItem('workspaces'))
+   const savedWorkSPaces = JSON.parse(localStorage.getItem('workspaces')) || []
    const currentUserWorkspaces = savedWorkSPaces.filter((item:any)=>item.members.includes(owner))
   const [currentWorkSpaceIndex, setCurrentWorkSpaceIndex] = useState(0)
   useEffect(()=>{

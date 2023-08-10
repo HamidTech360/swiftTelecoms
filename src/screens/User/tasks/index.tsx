@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Modal from '../../../components/modal'
 import { useOutletContext } from 'react-router-dom'
-import { AiOutlineLink, AiOutlineClose } from 'react-icons/ai'
+import { AiOutlineClose } from 'react-icons/ai'
+import {BiCommentEdit} from 'react-icons/bi'
 import { LiaFileUploadSolid } from 'react-icons/lia'
 import { TaskNav, ModalContent , TextArea} from './tasks.style'
 import FormInput from '../../../components/forms/input'
@@ -11,29 +12,71 @@ import { AuthButton } from '../../Auth/Login/login.style'
 const Tasks = () => {
 
   //@ts-ignore
-  const {currentWorkspace, handleAddTask, isWorkspaceAvailable} = useOutletContext()
+  const {currentWorkspace, handleAddTask, handleUpdateTask, isWorkspaceAvailable} = useOutletContext()
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [workspaceTasks, setworkspaceTasks] = useState([])
+  const [isEditMode, setIsEditMode] = useState(false)
+  const [selectedItem, setSelectedItem] = useState(null)
   const [navOptions, setNavOptions] = useState([
-    { label: 'In Progress', active: true },
-    { label: 'Review' },
-    { label: 'Done' },
+    { label: 'In Progress', active: true, tag:'inProgress' },
+    { label: 'Review', tag:'review' },
+    { label: 'Done', tag:'done' },
   ])
 
+  // console.log(currentWorkspace);
+  
   const [formData, setFormData] = useState({
     label:'',
-    description:''
+    description:'',
+    status:'inProgress'
   })
+
+  useEffect(()=>{
+    const currentTab = navOptions.find(item=>item.active)
+    handleTabSwitch(currentTab?.tag)
+  }, [currentWorkspace])
+
+  useEffect(()=>{
+    
+
+    if(isEditMode && selectedItem){
+      setFormData({
+        //@ts-ignore
+        label:selectedItem?.label,
+        //@ts-ignore
+        description:selectedItem?.description,
+        //@ts-ignore
+        status:selectedItem?.status || 'inProgress'
+      })
+    }else{
+      setFormData({
+        label:'',
+        description:'',
+        status:'inProgress'
+      })
+    }
+  }, [isEditMode, selectedItem])
 
   const handleChange = (e:any)=>{
     const formData__c = {...formData}
     //@ts-ignore
     formData__c[e.currentTarget.name] = e.currentTarget.value
     setFormData(formData__c)
+     console.log(formData);
+    
   }
 
   const handleSubmit = ()=>{
-    handleAddTask(formData)
+    isEditMode?handleUpdateTask(formData, currentWorkspace?.tasks?.indexOf(selectedItem)):handleAddTask(formData)
     setIsModalOpen(false)
+
+    const activeTab = navOptions.find(item=>item.active)
+    handleTabSwitch(activeTab?.tag)
+  }
+
+  const handleTabSwitch = (tab:any)=>{
+    const filteredTasks = currentWorkspace?.tasks.filter((item:any)=>item.status==tab)
+    setworkspaceTasks(filteredTasks)
   }
 
   const handleFilter = (option: any) => { 
@@ -42,15 +85,14 @@ const Tasks = () => {
     const indexOfSelected = navOptions__c.indexOf(option)
     navOptions__c[indexOfSelected].active = true
     setNavOptions(navOptions__c)
+
+    handleTabSwitch(navOptions__c[indexOfSelected].tag)
   }
 
   const trimString = (string:string)=>{
     return string.split(" ").slice(0, 12).join(" ")  
   }
 
-  //  console.log(currentWorkspace?.tasks?.length);
-  
-  
   
 
   return (
@@ -60,7 +102,10 @@ const Tasks = () => {
         <div className="flex-1 flex justify-end">
           <button
             onClick={isWorkspaceAvailable?
-                ()=>setIsModalOpen(true):
+                ()=>{
+                  setIsModalOpen(true)
+                  setIsEditMode(false)
+                }:
                 ()=>alert('No Workspace selected. Please crrate or select a workspace')
             }
             style={{ background: '#7F56D9' }}
@@ -88,12 +133,12 @@ const Tasks = () => {
               </TaskNav>
             ))}
           </div>
-          {(currentWorkspace?.tasks?.length ===0  || !currentWorkspace) && 
+          {(workspaceTasks?.length ===0  || !currentWorkspace) && 
             <div className='text-center h-full text-gray-300 font-semibold text-2xl mt-32'>No Task in this workspace</div>
           } 
-          <div className="grid mt-10 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-5">
+          <div className="grid mt-10 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-x-5 gap-y-5">
             
-            {currentWorkspace?.tasks?.map((item:any, i:any) => (
+            {workspaceTasks?.map((item:any, i:any) => (
               <div
                 key={i}
                 className="rounded-lg flex flex-col h-44 px-3 py-4"
@@ -122,7 +167,13 @@ const Tasks = () => {
                     </div>
                   </div>
                   <div className="flex-1 items-center flex justify-end">
-                    <AiOutlineLink size={20} />
+                    <BiCommentEdit onClick={
+                       ()=>{
+                        setIsModalOpen(true)
+                        setSelectedItem(item)
+                        setIsEditMode(true)
+                      }
+                    } className="cursor-pointer" size={20} />
                     <span className="text-md ml-1">1</span>
                   </div>
                 </div>
@@ -144,6 +195,7 @@ const Tasks = () => {
                           label='Task Tilte'
                           name='label'
                           onChange={(e)=>handleChange(e)}
+                          value={formData.label}
                       />
                     </div>
                   <div className='mb-3'>
@@ -152,8 +204,28 @@ const Tasks = () => {
                         name='description' 
                         rows={7}
                         onChange={(e:any)=>handleChange(e)}
+                        value={formData.description}
                       />
                     </div>
+
+                    {isEditMode &&
+                    <div className="mb-3">
+                    <select 
+                      className='border appearance-none  rounded-md  outline-none h-12 px-3 py-2 box-border w-full focus:outline-none' 
+                      onChange={(e)=>handleChange(e)}
+                      style={{
+                        border: '1px solid #D0D5DD',
+                        fontFamily:'inter'
+                      }}
+                      name='status'
+                      value={formData.status}
+                    >
+                        <option value="inProgress">In Progress</option>
+                        <option value="review">Review</option>
+                        <option value="done">Done</option>
+                    </select>
+                  </div>
+                  }
                     <AuthButton onClick={()=>handleSubmit()}>Save Task</AuthButton>
                 </ModalContent>
           </Modal>

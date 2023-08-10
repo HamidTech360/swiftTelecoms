@@ -8,13 +8,14 @@ import { useEffect, useState } from 'react'
 import { BiBarChartSquare } from 'react-icons/bi'
 import { TbHexagon3D } from 'react-icons/tb'
 import { AiOutlineFile,  AiOutlinePlusCircle, AiOutlineClose, AiOutlineLogout } from 'react-icons/ai'
-// import { GoTasklist } from 'react-icons/go'
-// import { PiFolderNotchMinusLight } from 'react-icons/pi'
+// import {apiUrl} from '../../config/index.json'
+// import axios from 'axios'
 import { NavItem, SideGrid } from './adminlayout.style'
 
 const AdminLayout = () => {
   const location = useLocation()
   const navigate = useNavigate()
+  const owner = localStorage.getItem('username')
   const currentPath = location.pathname
   const navOptions = [
     {
@@ -40,6 +41,7 @@ const AdminLayout = () => {
   const token = localStorage.getItem('token')
    //@ts-ignore
    const savedWorkSPaces = JSON.parse(localStorage.getItem('workspaces'))
+   const currentUserWorkspaces = savedWorkSPaces.filter((item:any)=>item.members.includes(owner))
   const [currentWorkSpaceIndex, setCurrentWorkSpaceIndex] = useState(0)
   useEffect(()=>{
     if(!token){
@@ -49,17 +51,27 @@ const AdminLayout = () => {
 
  
 
-  const [workSpaces, setWorkSpaces] =useState(savedWorkSPaces || []) 
+  const [workSpaces, setWorkSpaces] =useState(currentUserWorkspaces || []) 
 
   const handleAddTask = (task:any)=>{
-    let item =  {
-      ...task,
-      status:'inProgress'
-    }
+    // let item =  {
+    //   ...task,
+    //   status:'inProgress'
+    // }
     const workspaces_c = [...workSpaces]
-    workspaces_c[currentWorkSpaceIndex].tasks = [...workspaces_c[currentWorkSpaceIndex].tasks, item]
+    workspaces_c[currentWorkSpaceIndex].tasks = [...workspaces_c[currentWorkSpaceIndex].tasks, task]
     setWorkSpaces(workspaces_c)    
     localStorage.setItem('workspaces', JSON.stringify(workspaces_c))
+  }
+
+  const handleUpdateTask = (updatedTask:any, index:any)=>{ 
+    console.log(updatedTask);
+      
+      const workspaces_c = [...workSpaces]
+      workspaces_c[currentWorkSpaceIndex].tasks[index] = updatedTask
+      setWorkSpaces(workspaces_c)
+      localStorage.setItem('workspaces', JSON.stringify(workspaces_c))
+      alert('Task status updated succesfully')
   }
 
   const handleAssetUpload = (asset:any)=>{
@@ -92,9 +104,10 @@ const AdminLayout = () => {
 
   const createNewWorkspace = ()=>{
     
+    
     let newWorkSpace = {
       ...formData,
-      members:[],
+      members:[owner],
       assets:[],
       tasks:[]
     }
@@ -142,6 +155,7 @@ const AdminLayout = () => {
             handleAddTask,
             handleAssetUpload,
             handleDeleteAsset,
+            handleUpdateTask,
             isWorkspaceAvailable: workSpaces.length > 0
           }}
          />
@@ -152,7 +166,7 @@ const AdminLayout = () => {
       {/* This hadles The rightBar */}
       {(currentPath === '/user/workspace' || currentPath === '/user/assets') && (
         <div
-          className=" py-10 px-5  w-72   flex-col"
+          className=" py-10 px-5 hidden xl:block w-72   flex-col"
           style={{ maxHeight: '100vh', overflow: 'hidden' }}
         >
           <div
@@ -239,7 +253,7 @@ const AdminLayout = () => {
                       onChange={(e)=>handleChange(e)}
                   />
                 </div>
-              <div className='mb-3'>
+               <div className='mb-3'>
                   <div className="mb-1 font-medum">Workspace description</div>
                   <TextArea 
                     name='description' 
@@ -247,6 +261,8 @@ const AdminLayout = () => {
                     onChange={(e:any)=>handleChange(e)}
                   />
                 </div>
+
+                
                 <AuthButton onClick={()=>createNewWorkspace()}>Create Workspace</AuthButton>
             </ModalContent>
       </Modal>

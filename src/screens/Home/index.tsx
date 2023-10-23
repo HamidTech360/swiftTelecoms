@@ -1,10 +1,10 @@
-
+import { TestDiv } from "./home.style";
 
 const Home = () => {
     return ( 
-        <div className='text-center'>
+        <TestDiv>
             Home
-        </div>
+        </TestDiv>
      );
 }
  

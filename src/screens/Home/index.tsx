@@ -1,11 +1,8 @@
-import { TestDiv } from "./home.style";
+import { BannerDiv, TestDiv } from './home.style'
+import banner from '../../assets/images/banner.jpg'
 
 const Home = () => {
-    return ( 
-        <TestDiv>
-            Home
-        </TestDiv>
-     );
+  return <BannerDiv></BannerDiv>
 }
- 
-export default Home;
+
+export default Home

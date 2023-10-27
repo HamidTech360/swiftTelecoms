@@ -1,10 +1,10 @@
-import { TestDiv } from "./home.style";
+import { Banner } from "./home.style";
 
 const Home = () => {
     return ( 
-        <TestDiv>
-            Home
-        </TestDiv>
+        <Banner>
+           
+        </Banner>
      );
 }
  

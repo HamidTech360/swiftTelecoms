@@ -1,5 +1,5 @@
 
-const AuthLayout = ({children}:any) => {
+const AuthLayout = () => {
  
  
   return (

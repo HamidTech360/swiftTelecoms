@@ -1,10 +1,5 @@
-
-const AuthLayout = ({children}:any) => {
- 
- 
-  return (
-    <div></div>
-  )
+const AuthLayout = () => {
+  return <div></div>
 }
 
 export default AuthLayout

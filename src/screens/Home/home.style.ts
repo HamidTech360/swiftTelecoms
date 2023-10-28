@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Banner = styled.div.attrs({
-  className: 'font-bold pt-50 text-center w-full ',
+  className: 'font-bold pt-50 text-center ',
 })`
   background-image: url('../../assets/banner1.png');
   // font-size:30px;
@@ -35,3 +35,19 @@ export const SubText = styled.p.attrs({
   className:
     'text-[#7E8290] text-center w-11/12 md:w-6/6 text-xs md:text-lg m-auto leading-7 ',
 })``
+
+export const About = styled.div.attrs({
+  className:
+    ' bg-[#1D1E26] text-white p-5 md:p-10 lg:p-40 md:grid grid-cols-2 ',
+})`
+  min-height: 40vh;
+  height: fit-content;
+  font-family: Montserrat;
+`
+// color: ;
+// text-align: justify;
+// font-family: Montserrat;
+// font-size: 17px;
+// font-style: normal;
+// font-weight: 400;
+// line-height: 259.4%; /* 44.098px */

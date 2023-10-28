@@ -1,21 +1,21 @@
 import CustomButton from '../../components/CustomButton/CustomButton'
-import { Banner, ParaOne, ParaThree, ParaTwo } from './home.style'
+import { Banner, TopText, SubText, BodyText } from './home.style'
 
 const Home = () => {
   return (
     <div>
       <Banner>
         <div className="p-10 md:w-3/6 flex m-auto flex-col md:pt-36">
-          <ParaOne>135,455 Comunity Members</ParaOne>
+          <TopText>135,455 Comunity Members</TopText>
 
-          <ParaTwo>
+          <BodyText>
             We connect you with a <br /> community of people like you.
-          </ParaTwo>
+          </BodyText>
 
-          <ParaThree>
+          <SubText>
             Join any of our communities and connect with thousands of people who
             share the same interest as you,
-          </ParaThree>
+          </SubText>
 
           <div className="m-auto mt-9">
             <CustomButton>Start your 3-Day free trial</CustomButton>

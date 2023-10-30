@@ -1,5 +1,6 @@
 import CustomButton from '../../components/CustomButton/CustomButton'
 import { Banner, TopText, SubText, BodyText, About } from './home.style'
+import OfferSection from './offer'
 
 const Home = () => {
   return (
@@ -43,6 +44,9 @@ const Home = () => {
           </p>
         </div>
       </About>
+      <>
+        <OfferSection />
+      </>
     </div>
   )
 }

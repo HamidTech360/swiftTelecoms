@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 interface ICardText {
@@ -12,19 +11,37 @@ function OfferSection() {
   const cardText: ICardText[] = [
     {
       img: '',
-      title: 'Increase Income',
+      title: 'Data Subscription',
       text: ` Ligula ullamcorper malesuada proin libero nunc consequat interdum, Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
       link: `#`,
     },
     {
       img: '',
-      title: 'Increase Income',
+      title: 'Airtime TopUp',
       text: ` Ligula ullamcorper malesuada proin libero nunc consequat interdum, Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
       link: `#`,
     },
     {
       img: '',
-      title: 'Increase Income',
+      title: 'Utility Payment',
+      text: ` Ligula ullamcorper malesuada proin libero nunc consequat interdum, Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+      link: `#`,
+    },
+    {
+      img: '',
+      title: 'VTU website design',
+      text: ` Ligula ullamcorper malesuada proin libero nunc consequat interdum, Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+      link: `#`,
+    },
+    {
+      img: '',
+      title: 'Bulk SMS',
+      text: ` Ligula ullamcorper malesuada proin libero nunc consequat interdum, Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+      link: `#`,
+    },
+    {
+      img: '',
+      title: 'Web development',
       text: ` Ligula ullamcorper malesuada proin libero nunc consequat interdum, Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
       link: `#`,
     },
@@ -32,13 +49,17 @@ function OfferSection() {
   return (
     <div className=" bg-[#23283a] min-h-[50vh] p-5 lg:py-10 lg:px-44">
       <p className="text-[#CFDDFF] text-center text-xl md:text-3xl font-bold leading-normal">
-        What we Offer
+        Our Services
       </p>
+      <div className='text-center text-[#ffffff70] text-xs leading-6 lg:text-sm lg:w-1/2 mx-auto mb-10'>
+        We offer instant recharge of Airtime, Databundle, CableTV (DStv, GOtv & Startimes), Electricity Bill Payment.
+      </div>
       <div className="md:grid md:grid-cols-2 lg:grid-cols-3  md:gap-5 ">
         {cardText.map((item: any, i: number) => (
           <div
             key={i}
-            className="border-2 border-solid border-red-500 p-2 md:p-5 rounded-lg mb-6"
+            style={{border:'2px solid  rgba(44, 85, 189, 0.28)'}}
+            className="border-2 border-soli  p-2 md:p-5 rounded-lg mb-6"
           >
             <div className="w-[50px] h-[50px] bg-[#3E4052] rounded-md"></div>
             <p className="text-[#FFF] text-sm font-semibold ">{item.title}</p>

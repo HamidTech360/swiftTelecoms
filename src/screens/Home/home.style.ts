@@ -13,7 +13,7 @@ export const Banner = styled.div.attrs({
   background-size: cover;
   background-repeat: no-repeat;
   padding: 5px;
-  width: 100%;
+  /* width: 10%; */
   @media screen and (max-width: 768px) {
     background-position: 70%;
   }
@@ -42,14 +42,14 @@ export const About = styled.div.attrs({
   className:
     ' bg-[#1D1E26] text-white p-5 md:p-10 lg:p-40 md:grid grid-cols-2 ',
 })`
-  min-height: 40vh;
+  /* min-height: 40vh; */
   height: fit-content;
   font-family: Montserrat;
 `
-// color: ;
-// text-align: justify;
+
+// color: var(--Theme-Orange, #D7634E);
 // font-family: Montserrat;
-// font-size: 17px;
+// font-size: 12px;
 // font-style: normal;
-// font-weight: 400;
-// line-height: 259.4%; /* 44.098px */
+// font-weight: 600;
+// line-height: normal;

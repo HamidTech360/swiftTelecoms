@@ -10,7 +10,7 @@ const Home = () => {
           <TopText>135,455 Comunity Members</TopText>
 
           <BodyText>
-            We connect you with a <br /> community of people like you.
+            We offer you   swift and seamless <br /> VTU services.
           </BodyText>
 
           <SubText>
@@ -30,17 +30,12 @@ const Home = () => {
             <span className=" mr-3">_______</span> Who we are
           </p>
           <p className="text-[#CFDDFF] text-2xl md:text-3xl font-bold mt-0">
-            The Next Stage Lab
+            Swift Telecoms
           </p>
         </div>
         <div>
-          <p className="text-[#D2D5DE] md:text-lg text-base font-normal leading-loose text-justify">
-            The Next Stage Lab is a paid online program and global community for
-            learners(beginners, professionals and experts) and entrepreneurs who
-            would like guidance and mentorship through the most difficult part
-            of upgrading and increasing your income. The Next Stage Lab has
-            created an opportunity for poeple to engage, learn, network and
-            access exclusive contents.
+          <p className="text-[#D2D5DE]  text-sm md:text-lg text-base font-normal leading-7 lg:leading-loose text-justify">
+            Swift Telecoms is a  is a web platform where users can purchase Mobile Data Bundles, VTU Airtime, Pay Electricity Bills, TV Subscription. We have designed our website to accommodate user needs. Providing users of our platform the opportunity to save cost, make fast, secured, efficient and rewarding purchases and bill payments.
           </p>
         </div>
       </About>

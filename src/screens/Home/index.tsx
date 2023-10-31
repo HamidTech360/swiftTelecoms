@@ -3,9 +3,9 @@ import { Banner, TopText, SubText, BodyText, About } from './home.style'
 
 const Home = () => {
   return (
-    <div className="w-[100%]">
+    <div className="overflow-x-hidden">
       <Banner>
-        <div className="p-10 md:w-3/6 flex m-auto flex-col md:pt-36">
+        <div className="p-5 pt-28 md:w-3/6 flex m-auto flex-col ">
           <TopText>135,455 Comunity Members</TopText>
 
           <BodyText>

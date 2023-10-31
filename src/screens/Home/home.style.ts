@@ -28,8 +28,10 @@ export const TopText = styled.p.attrs({
 
 export const BodyText = styled.p.attrs({
   className:
-    'text-[#CFDDFF] text-center font-bold text-2xl mt-14 md:text-4xl leading-normal mb-8 md:mb-16 ',
-})``
+    'text-[#CFDDFF] text-center font-bold text-3xl mt-14 md:text-4xl leading-normal mb-8 md:mb-16 ',
+})`
+    line-height:50px;
+`
 
 export const SubText = styled.p.attrs({
   className:

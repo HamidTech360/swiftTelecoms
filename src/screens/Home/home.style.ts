@@ -62,5 +62,3 @@ export const CardTitle = styled.p.attrs({
 export const CardText = styled.p.attrs({
   className: 'text-xs font-normal leading-8 text-[#ffffff70] mb-10',
 })``
-
-// line-height: normal;

@@ -30,7 +30,7 @@ export const BodyText = styled.p.attrs({
   className:
     'text-[#CFDDFF] text-center font-bold text-3xl mt-14 md:text-4xl leading-normal mb-8 md:mb-16 ',
 })`
-    line-height:50px;
+  line-height: 50px;
 `
 
 export const SubText = styled.p.attrs({
@@ -46,10 +46,21 @@ export const About = styled.div.attrs({
   height: fit-content;
   font-family: Montserrat;
 `
+export const SectionTitles = styled.p.attrs({
+  className:
+    'text-[#CFDDFF] text-center text-xl md:text-3xl font-bold leading-normal',
+})``
 
-// color: var(--Theme-Orange, #D7634E);
-// font-family: Montserrat;
-// font-size: 12px;
-// font-style: normal;
-// font-weight: 600;
+export const CardImage = styled.div.attrs({
+  className: 'w-[50px] h-[50px] bg-[#3E4052] rounded-md',
+})``
+
+export const CardTitle = styled.p.attrs({
+  className: 'text-[#FFF] text-sm font-semibold ',
+})``
+
+export const CardText = styled.p.attrs({
+  className: 'text-xs font-normal leading-8 text-[#ffffff70] mb-10',
+})``
+
 // line-height: normal;

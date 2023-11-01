@@ -46,7 +46,7 @@ function Testimonial() {
                 alt="imagr"
                 className="mr-3"
               />{' '}
-              <p className="text-[#FFF] text-xs font-semibold -mt-2">John Doe</p>
+              <p className="text-[#FFF] text-xs font-semibold mt-0">John Doe</p>
             </div>
           </div>
         ))}

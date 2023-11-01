@@ -67,7 +67,12 @@ function OfferSection() {
             <p className="text-xs font-normal leading-8 text-[#ffffff70] mb-10">
               {item.text}{' '}
             </p>
-            <Link to={'#'}>Learn More </Link>
+            <Link
+              to={'#'}
+              className="text-[#D7634E] text-sm font-semibold no-underline "
+            >
+              Learn More{' '}
+            </Link>
           </div>
         ))}
       </div>

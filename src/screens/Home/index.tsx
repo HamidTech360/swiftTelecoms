@@ -1,3 +1,4 @@
+import AppHeader from '../../components/AppHeader/AppHeader'
 import CustomButton from '../../components/CustomButton/CustomButton'
 import Footer from '../../components/Footer/Footer'
 import Testimonial from './Testimonial'
@@ -9,6 +10,7 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden ">
       <Banner>
+        <AppHeader />
         <div className="p-5 pt-28 md:w-3/6 flex m-auto flex-col ">
           <TopText>135,455 Comunity Members</TopText>
 

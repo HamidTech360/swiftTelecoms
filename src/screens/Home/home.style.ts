@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Banner = styled.div.attrs({
-  className: 'font-bold pt-50 text-center ',
+  className: 'font-bold pt-50 ',
 })`
   background-image: url('../../assets/banner1.png');
   // font-size:30px;

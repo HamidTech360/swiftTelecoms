@@ -1,6 +1,7 @@
 import { SectionTitles } from './home.style'
 import userOne from '../../assets/user1.png'
 import CustomAccordion from '../../components/CustomAccordion/CustomAccordion'
+import CustomButton from '../../components/CustomButton/CustomButton'
 
 interface ICardText {
   img: string
@@ -86,13 +87,29 @@ function Testimonial() {
           ))}
         </div>
       </div>
-
       <div className="bg-[#1D1E26] min-h-[50vh] p-5 lg:py-10 lg:px-44 ">
         <SectionTitles> Frequently Asked Questions </SectionTitles>
-
         {accordionData.map((item: any, i: number) => (
           <CustomAccordion key={i} content={item.content} title={item.title} />
         ))}
+      </div>
+
+      <div
+        className="md:grid grid-cols-3 p-5 lg:py-10 lg:px-44 bg-[#23283a] "
+        style={{ borderBottom: '1px solid #4A4E5C' }}
+      >
+        <div className="col-span-2">
+          <SectionTitles style={{ textAlign: 'left' }}>
+            Are you ready to join Our Network
+          </SectionTitles>
+          <p className="text-[#9CA8C5] leading-7 text-sm font-medium md:w-[60%] ">
+            Get Registered with The Next Stage Lab. You will be making one of
+            the best decisions of your life, if you can join now.
+          </p>
+        </div>
+        <div className="m-auto flex">
+          <CustomButton>Start your 3-day Free trial</CustomButton>
+        </div>
       </div>
     </div>
   )

@@ -2,4 +2,11 @@
   text-align: center;
   padding: 50px;
   border: 2px solid rgba(44, 85, 189, 0.28);
+
+  color: #9ca8c5;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 204.4%; /* 28.616px */
 }

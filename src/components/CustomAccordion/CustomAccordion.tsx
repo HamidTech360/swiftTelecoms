@@ -3,7 +3,7 @@ import { useState } from 'react'
 interface IAccord {
   title?: string
   content?: string
-  key: number
+  key?: number
 }
 
 function CustomAccordion({ title, content, key }: IAccord) {

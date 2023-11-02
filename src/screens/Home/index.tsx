@@ -1,4 +1,5 @@
 import CustomButton from '../../components/CustomButton/CustomButton'
+import Footer from '../../components/Footer/Footer'
 import Testimonial from './Testimonial'
 import Explore from './explore'
 import { Banner, TopText, SubText, BodyText, About } from './home.style'
@@ -50,6 +51,7 @@ const Home = () => {
       <OfferSection />
       <Explore />
       <Testimonial />
+      <Footer />
     </div>
   )
 }

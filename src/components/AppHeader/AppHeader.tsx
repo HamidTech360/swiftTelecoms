@@ -11,6 +11,14 @@ function AppHeader() {
       link: '#',
     },
     {
+      title: 'Sign up',
+      link: '#',
+    },
+    {
+      title: 'Login',
+      link: '#',
+    },
+    {
       title: 'About us ',
       link: '#',
     },
@@ -44,33 +52,25 @@ function AppHeader() {
         </div>
 
         <div className=" lg:hidden ">
-          {!isOpen ? (
-            <BiMenuAltRight
-              onClick={() => {
-                setIsOpen(!isOpen)
-              }}
-              size={30}
-              color={'white'}
-            />
-          ) : (
-            //   <BiMenuAltRight onClick={()=>{setIsOpen(!isOpen)}} size={30} color={'white'} />
-            <p
-              onClick={() => {
-                setIsOpen(!isOpen)
-              }}
-            >
-              X
-            </p>
-          )}
+          <BiMenuAltRight
+            onClick={() => {
+              setIsOpen(!isOpen)
+            }}
+            size={30}
+            color={'white'}
+          />
         </div>
       </div>
       {isOpen && (
-        <div className=" text-center fixed mb-4 top-16  p-2   w-[100%] transition ease-out duration-1000 transform">
+        <div className="  fixed mb-5  top-0 right-0 w-[50%] md:w-[30%] min-h-full p-5 pt-10 bg-[#23283a]">
           {headerData.map((item: any, i: any) => (
             <Link
               key={i}
               to={'#'}
               className="block  mb-5 no-underline text-sm text-[#D2D5DE] transition-opacity duration-500  "
+              onClick={() => {
+                setIsOpen(!isOpen)
+              }}
             >
               {' '}
               {item.title}

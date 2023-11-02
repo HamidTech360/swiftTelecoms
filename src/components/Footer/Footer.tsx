@@ -43,7 +43,7 @@ function Footer() {
           style={{ borderTop: '1px solid #4A4E5C' }}
           className="text-[#B5C4EA] text-center pt-5  text-xs font-medium"
         >
-          © Copyright The Next Stage Lab 2021
+          © Copyright Swift Telecoms 2023
         </p>
       </div>
     </div>

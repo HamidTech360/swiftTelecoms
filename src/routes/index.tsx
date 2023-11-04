@@ -1,13 +1,17 @@
 import { createBrowserRouter } from 'react-router-dom'
 //screens
 import Home from '../screens/Home'
+import Login from '../screens/Auth/Login'
 
 const AllRoutes = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
   },
-
+  {
+    path: '/login',
+    element: <Login />,
+  },
 
   // {
   //   path: '/user',

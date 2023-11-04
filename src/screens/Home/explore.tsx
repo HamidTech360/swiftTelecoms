@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CardImage, CardText, CardTitle, SectionTitles } from './home.style'
+import { CardImage, CardText, CardTitle, SectionTitles , FeatureImg} from './home.style'
 
 interface ICardText {
   img: string
@@ -40,8 +40,8 @@ function Explore() {
     },
   ]
   return (
-    <div className="min-h-[50vh] p-5 lg:py-10 lg:px-44 bg-[#1D1E26]">
-      <SectionTitles>Explore Our Communities</SectionTitles>
+    <div className=" lg:grid grid-cols-2  md:py-28 py-20  bg-[#23283a]">
+      {/* <SectionTitles>Explore Our Communities</SectionTitles>
       <div className=" md:grid grid-cols-2 gap-5 ">
         {cardText.map((item: any, i: number) => (
           <div
@@ -65,7 +65,21 @@ function Explore() {
             </Link>
           </div>
         ))}
+      </div> */}
+
+      <div className='text-white md:px-20 px-5 mb-14 md:md-0  flex items-center'>
+         <div>
+          <div className="font-bold text-3xl mb-7">Our Features</div>
+          <div className="md:text-sm text-sm leading-8">
+            Certain things are hard 😓 but making payments shouldn't be one of them 😋💗.
+            Ofavourdatasub helps you make payments for services you enjoy right from the comfort of your home or office. The experience of total convenience,fast service delivery and easy payment is just at your fingertips.
+          </div>
+         </div>
       </div>
+      <div className='flex justify-center px-7'>
+        <FeatureImg  src="../../assets/about.png" alt="" />
+      </div>
+
     </div>
   )
 }

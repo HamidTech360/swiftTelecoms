@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 //screens
 import Home from '../screens/Home'
 import Login from '../screens/Auth/Login'
+import Register from '../screens/Auth/Login/Register/Register'
 
 const AllRoutes = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const AllRoutes = createBrowserRouter([
   {
     path: '/login',
     element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
   },
 
   // {
@@ -46,6 +51,3 @@ const AllRoutes = createBrowserRouter([
 ])
 
 export default AllRoutes
-
-// width: 396px;
-// height: 50px;

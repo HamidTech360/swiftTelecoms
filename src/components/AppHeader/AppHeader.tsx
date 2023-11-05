@@ -8,23 +8,24 @@ function AppHeader() {
   const headerData = [
     {
       title: 'Home',
-      link: '#',
+      path: '#',
     },
-    {
-      title: 'Sign up',
-      link: '#',
-    },
-    {
-      title: 'Login',
-      link: '#',
-    },
+
     {
       title: 'About us ',
-      link: '#',
+      path: '#',
     },
     {
       title: 'Contact us',
-      link: '#',
+      path: '#',
+    },
+    {
+      title: 'Sign up',
+      path: '#',
+    },
+    {
+      title: 'Login',
+      path: '/login',
     },
   ]
   return (
@@ -35,9 +36,9 @@ function AppHeader() {
           {headerData.map((item: any, i: number) => (
             <>
               <Link
-                to={item.link}
+                to={item.path}
                 key={i}
-                className=" no-underline text-sm font-normal text-[#D2D5DE]"
+                className=" no-underline text-lg font-normal mr-7 text-[#D2D5DE]"
               >
                 {item.title}
               </Link>{' '}
@@ -62,11 +63,16 @@ function AppHeader() {
         </div>
       </div>
       {isOpen && (
-        <div className="  fixed mb-5  top-0 right-0 w-[50%] md:w-[30%] min-h-full p-5 pt-10 bg-[#23283a]">
+        <div
+          onClick={() => {
+            setIsOpen(false)
+          }}
+          className="  fixed mb-5  top-0 right-0 w-[50%] md:w-[30%] min-h-full p-5 pt-10 bg-[#23283a]"
+        >
           {headerData.map((item: any, i: any) => (
             <Link
               key={i}
-              to={'#'}
+              to={item.path}
               className="block  mb-5 no-underline text-sm text-[#D2D5DE] transition-opacity duration-500  "
               onClick={() => {
                 setIsOpen(!isOpen)

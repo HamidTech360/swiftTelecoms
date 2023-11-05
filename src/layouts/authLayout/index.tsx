@@ -30,11 +30,3 @@ const AuthLayout = ({ children, title, subTitle }: any) => {
 }
 
 export default AuthLayout
-
-// color: rgba(255, 255, 255, 0.62);
-
-// font-family: Montserrat;
-// font-size: 13px;
-// font-style: normal;
-// font-weight: 500;
-// line-height: 161.9%;

@@ -9,7 +9,7 @@ const Login = () => {
       subTitle="Let's pickup from where you left"
     >
       <div className="text-white">
-        <p className="text-center text-[#D7634E] mb-12 font-bold text-base ">
+        <p className="text-center text-[#D7634E] mb-12 font-bold text-2xl ">
           Log in
         </p>
         <form action="">

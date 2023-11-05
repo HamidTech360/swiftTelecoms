@@ -38,7 +38,7 @@ function AppHeader() {
               <Link
                 to={item.path}
                 key={i}
-                className=" no-underline text-lg font-normal mr-7 text-[#D2D5DE]"
+                className=" no-underline text-sm font-normal mr-7 text-[#D2D5DE]"
               >
                 {item.title}
               </Link>{' '}
@@ -73,7 +73,7 @@ function AppHeader() {
             <Link
               key={i}
               to={item.path}
-              className="block  mb-5 no-underline text-sm text-[#D2D5DE] transition-opacity duration-500  "
+              className="block  mb-5 no-underline text-lg text-[#D2D5DE] transition-opacity duration-500  "
               onClick={() => {
                 setIsOpen(!isOpen)
               }}

@@ -46,3 +46,6 @@ const AllRoutes = createBrowserRouter([
 ])
 
 export default AllRoutes
+
+// width: 396px;
+// height: 50px;

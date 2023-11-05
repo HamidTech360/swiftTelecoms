@@ -21,7 +21,7 @@ function AppHeader() {
     },
     {
       title: 'Sign up',
-      path: '#',
+      path: '/register',
     },
     {
       title: 'Login',
@@ -73,7 +73,7 @@ function AppHeader() {
             <Link
               key={i}
               to={item.path}
-              className="block  mb-5 no-underline text-lg text-[#D2D5DE] transition-opacity duration-500  "
+              className="block  mb-5 no-underline text-[15px] text-[#D2D5DE] transition-opacity duration-500  "
               onClick={() => {
                 setIsOpen(!isOpen)
               }}

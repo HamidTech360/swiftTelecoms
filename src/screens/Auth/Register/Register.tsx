@@ -2,13 +2,29 @@ import { Link } from 'react-router-dom'
 import AuthLayout from '../../../layouts/authLayout'
 import { Label, Input } from '../Login/login.style'
 import { useNavigate } from 'react-router-dom'
-
+import { useFormik } from 'formik'
+import { UserRegister } from '../../../components/validate/validate'
 function Register() {
   const navigate = useNavigate()
 
   const handleSubmit = () => {
     navigate('/verify')
   }
+
+  const formik = useFormik({
+    initialValues: {
+      username: '',
+      email: '',
+      phone: '',
+      password: '',
+      confrirmPassword: '',
+    },
+    validationSchema: UserRegister(),
+
+    onSubmit: (values) => {
+      console.log(values)
+    },
+  })
   return (
     <AuthLayout
       title="Your community awaits"
@@ -21,22 +37,40 @@ function Register() {
         <div className="mb-5">
           <Label>Username</Label> <br />
           <Input type="text" placeholder="User1234" />
+          {formik.touched.username && formik.errors.username && (
+            <p className={'text-sm text-red-500'}>{formik.errors.username}</p>
+          )}
         </div>
         <div className="mb-5">
           <Label>Email</Label> <br />
           <Input type="email" placeholder="user@website.com" />
+          {formik.touched.email && formik.errors.email && (
+            <p className={'text-sm text-red-500'}>{formik.errors.email}</p>
+          )}
         </div>
         <div className="mb-5">
           <Label>Phone</Label> <br />
           <Input type="number" placeholder="12345" />
+          {formik.touched.phone && formik.errors.phone && (
+            <p className={'text-sm text-red-500'}>{formik.errors.phone}</p>
+          )}
         </div>
         <div className="mb-5">
           <Label>Password</Label> <br />
           <Input type="password" placeholder="********************" />
+          {formik.touched.password && formik.errors.password && (
+            <p className={'text-sm text-red-500'}>{formik.errors.password}</p>
+          )}
         </div>
         <div className="mb-5">
           <Label>Confirm Password</Label> <br />
           <Input type="password" placeholder="********************" />
+          {formik.touched.confrirmPassword &&
+            formik.errors.confrirmPassword && (
+              <p className={'text-sm text-red-500'}>
+                {formik.errors.confrirmPassword}
+              </p>
+            )}
         </div>
 
         <button

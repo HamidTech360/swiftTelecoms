@@ -113,7 +113,7 @@ function Register() {
       </form>
 
       <p className="text-[#AAABAF] text-sm font-semibold leading-10 text-center">
-        Already have an account? <Link to="#">Login</Link>{' '}
+        Already have an account? <Link to="/login">Login</Link>{' '}
       </p>
     </AuthLayout>
   )

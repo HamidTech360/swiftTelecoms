@@ -16,7 +16,6 @@ function Verify() {
       setError('')
     }
   }
-
   const handleSubmit = () => {
     if (!error) {
       console.log(data)

@@ -8,23 +8,24 @@ function AppHeader() {
   const headerData = [
     {
       title: 'Home',
-      link: '#',
+      path: '#',
+    },
+
+    {
+      title: 'About us ',
+      path: '#',
     },
     {
-      title: 'SignUp',
-      link: '#',
+      title: 'Contact us',
+      path: '#',
+    },
+    {
+      title: 'Sign up',
+      path: '/register',
     },
     {
       title: 'Login',
-      link: '#',
-    },
-    {
-      title: 'AboutUs ',
-      link: '#',
-    },
-    {
-      title: 'ContactUs',
-      link: '#',
+      path: '/login',
     },
   ]
   return (
@@ -35,9 +36,9 @@ function AppHeader() {
           {headerData.map((item: any, i: number) => (
             <>
               <Link
-                to={item.link}
+                to={item.path}
                 key={i}
-                className=" no-underline text-sm font-medium cursor-pointer text-[#D2D5DE] mr-5"
+                className=" no-underline text-sm font-bold cursor-pointer text-[#D2D5DE] mr-8"
               >
                 {item.title}
               </Link>{' '}
@@ -62,12 +63,17 @@ function AppHeader() {
         </div>
       </div>
       {isOpen && (
-        <div className="  fixed mb-5  top-0 right-0 w-[50%] md:w-[30%] min-h-full p-5 pt-10 bg-[#23283a]">
+        <div
+          onClick={() => {
+            setIsOpen(false)
+          }}
+          className="  fixed mb-5  top-0 right-0 w-[50%] md:w-[30%] min-h-full p-5 pt-10 bg-[#23283a]"
+        >
           {headerData.map((item: any, i: any) => (
             <Link
               key={i}
-              to={'#'}
-              className="block  mb-5 no-underline text-sm text-[#D2D5DE] transition-opacity duration-500  "
+              to={item.path}
+              className="block  mb-5 no-underline text-[15px] text-[#D2D5DE] transition-opacity duration-500  "
               onClick={() => {
                 setIsOpen(!isOpen)
               }}

@@ -70,9 +70,9 @@ function Explore() {
       <div className='text-white md:px-20 px-5 mb-14 md:md-0  flex items-center'>
          <div>
           <div className="font-bold text-3xl mb-7">Our Features</div>
-          <div className="md:text-sm text-sm leading-8">
+          <div className="md:text-sm text-sm lg:leading-9 leading-8">
             Certain things are hard 😓 but making payments shouldn't be one of them 😋💗.
-            Ofavourdatasub helps you make payments for services you enjoy right from the comfort of your home or office. The experience of total convenience,fast service delivery and easy payment is just at your fingertips.
+            swift telecoms helps you make payments for services you enjoy right from the comfort of your home or office. The experience of total convenience,fast service delivery and easy payment is just at your fingertips.
           </div>
          </div>
       </div>

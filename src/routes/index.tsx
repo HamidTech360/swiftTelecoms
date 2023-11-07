@@ -2,6 +2,8 @@ import { createBrowserRouter } from 'react-router-dom'
 //screens
 import Home from '../screens/Home'
 import Login from '../screens/Auth/Login'
+import Register from '../screens/Auth/Register/Register'
+import Verify from '../screens/Auth/Verify/Verify'
 
 const AllRoutes = createBrowserRouter([
   {
@@ -11,6 +13,14 @@ const AllRoutes = createBrowserRouter([
   {
     path: '/login',
     element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
+  },
+  {
+    path: '/verify',
+    element: <Verify />,
   },
 
   // {

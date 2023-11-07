@@ -3,7 +3,7 @@ import { BiMenuAltRight } from 'react-icons/bi'
 import { useState } from 'react'
 import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
-function AppHeader() {
+function AuthHeader() {
   const [isOpen, setisOpen] = useState<boolean>(false)
 
   const toggleDrawer = () => {
@@ -25,14 +25,6 @@ function AppHeader() {
       title: 'Contact us',
       path: '#',
     },
-    {
-      title: 'Sign up',
-      path: '/register',
-    },
-    {
-      title: 'Login',
-      path: '/login',
-    },
   ]
   return (
     <div>
@@ -50,12 +42,6 @@ function AppHeader() {
               </Link>{' '}
             </>
           ))}
-          <Link
-            to="#"
-            className=" no-underline text-sm rounded-full text-[#FFF] px-4 py-3 ml-3  bg-[#5B89FF] font-normal ]"
-          >
-            Get started
-          </Link>
         </div>
 
         <div className=" md:hidden flex flex-1 justify-end ">
@@ -74,7 +60,7 @@ function AppHeader() {
         {headerData.map((item: any, i: any) => (
           <div key={i}>
             <Link
-              className="block  mb-5 no-underline text-xs font-normal text-[#D2D5DE]   "
+              className="block  mb-5 no-underline text-[15px] text-[#D2D5DE]   "
               to={item.path}
               onClick={() => setisOpen(!isOpen)}
             >
@@ -87,4 +73,4 @@ function AppHeader() {
   )
 }
 
-export default AppHeader
+export default AuthHeader

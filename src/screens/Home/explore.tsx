@@ -1,47 +1,47 @@
-import { Link } from 'react-router-dom'
-import { CardImage, CardText, CardTitle, SectionTitles } from './home.style'
 
-interface ICardText {
-  img: string
-  title: string
-  text: string
-  link: string
-}
+import { FeatureImg} from './home.style'
+
+// interface ICardText {
+//   img: string
+//   title: string
+//   text: string
+//   link: string
+// }
 
 function Explore() {
-  const cardText: ICardText[] = [
-    {
-      img: '',
-      title: 'Forex Trading',
-      text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
-            Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
-      link: '#',
-    },
-    {
-      img: '',
-      title: 'Forex Trading',
-      text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
-            Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
-      link: '#',
-    },
-    {
-      img: '',
-      title: 'Forex Trading',
-      text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
-            Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
-      link: '#',
-    },
-    {
-      img: '',
-      title: 'Forex Trading',
-      text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
-            Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
-      link: '#',
-    },
-  ]
+  // const cardText: ICardText[] = [
+  //   {
+  //     img: '',
+  //     title: 'Forex Trading',
+  //     text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
+  //           Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+  //     link: '#',
+  //   },
+  //   {
+  //     img: '',
+  //     title: 'Forex Trading',
+  //     text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
+  //           Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+  //     link: '#',
+  //   },
+  //   {
+  //     img: '',
+  //     title: 'Forex Trading',
+  //     text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
+  //           Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+  //     link: '#',
+  //   },
+  //   {
+  //     img: '',
+  //     title: 'Forex Trading',
+  //     text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
+  //           Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+  //     link: '#',
+  //   },
+  // ]
   return (
-    <div className="min-h-[50vh] p-5 lg:py-10 lg:px-44 bg-[#1D1E26]">
-      <SectionTitles>Explore Our Communities</SectionTitles>
+    <div className=" lg:grid grid-cols-2  md:py-28 py-20  bg-[#23283a]">
+      {/* <SectionTitles>Explore Our Communities</SectionTitles>
       <div className=" md:grid grid-cols-2 gap-5 ">
         {cardText.map((item: any, i: number) => (
           <div
@@ -65,7 +65,21 @@ function Explore() {
             </Link>
           </div>
         ))}
+      </div> */}
+
+      <div className='text-white md:px-20 px-5 mb-14 md:md-0  flex items-center'>
+         <div>
+          <div className="font-bold text-3xl mb-7">Our Features</div>
+          <div className="md:text-sm text-sm lg:leading-9 leading-8">
+            Certain things are hard 😓 but making payments shouldn't be one of them 😋💗.
+            swift telecoms helps you make payments for services you enjoy right from the comfort of your home or office. The experience of total convenience,fast service delivery and easy payment is just at your fingertips.
+          </div>
+         </div>
       </div>
+      <div className='flex justify-center px-7'>
+        <FeatureImg  src="../../assets/about.png" alt="" />
+      </div>
+
     </div>
   )
 }

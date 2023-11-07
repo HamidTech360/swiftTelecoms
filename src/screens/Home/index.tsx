@@ -24,22 +24,24 @@ const Home = () => {
           </SubText>
 
           <div className="m-auto mt-9">
-            <CustomButton>Start your 3-Day free trial</CustomButton>
+            <CustomButton>Join us now</CustomButton>
           </div>
         </div>
       </Banner>
+
       <About>
+        
         <div>
           {' '}
-          <p className="text-[#5B89FF] text-sm font-normal  ">
+          <p className="text-[#5B89FF] text-sm font-normal mb-10  ">
             <span className=" mr-3">_______</span> Who we are
           </p>
-          <p className="text-[#CFDDFF] text-2xl md:text-3xl font-bold mt-0">
+          <p className="text-[#CFDDFF] mb-10 text-2xl md:text-3xl font-bold ">
             Swift Telecoms
           </p>
         </div>
         <div>
-          <p className="text-[#D2D5DE]  text-sm md:text-lg  font-normal leading-7 lg:leading-loose text-justify">
+          <p className="text-[#D2D5DE]  text-xs md:text-base  font-normal leading-7 md:leading-8  text-justify">
             Swift Telecoms is a is a web platform where users can purchase
             Mobile Data Bundles, VTU Airtime, Pay Electricity Bills, TV
             Subscription. We have designed our website to accommodate user
@@ -49,9 +51,9 @@ const Home = () => {
           </p>
         </div>
       </About>
-
-      <OfferSection />
       <Explore />
+      <OfferSection />
+      
       <Testimonial />
       <Footer />
     </div>

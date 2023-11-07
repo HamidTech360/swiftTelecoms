@@ -40,11 +40,11 @@ export const SubText = styled.p.attrs({
 
 export const About = styled.div.attrs({
   className:
-    ' bg-[#1D1E26] text-white p-5 md:p-10 lg:p-40 md:grid grid-cols-2 ',
+    ' bg-[#1D1E26] text-white px-7 md:px-10 md:px-40 md:grid block grid-cols-2 mt-0 py-20 md:py-28 ',
 })`
   /* min-height: 40vh; */
   height: fit-content;
-  font-family: Montserrat;
+
 `
 export const SectionTitles = styled.p.attrs({
   className:
@@ -62,3 +62,16 @@ export const CardTitle = styled.p.attrs({
 export const CardText = styled.p.attrs({
   className: 'text-xs font-normal leading-8 text-[#ffffff70] mb-10',
 })``
+
+
+export const FeatureImg = styled.img.attrs({
+
+})`
+  height:400px;
+  width:400px;
+  object-fit:cover;
+
+  @media screen and (max-width:500px){
+    width:350px;
+  }
+`

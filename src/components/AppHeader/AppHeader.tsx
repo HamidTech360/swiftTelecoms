@@ -30,15 +30,15 @@ function AppHeader() {
   ]
   return (
     <div>
-      <div className="py-7 px-5 lg:px-28 flex justify-between">
+      <div className="md:py-7 py-5 px-5 lg:px-10 flex">
         <div className="text-white">Swift Telecoms logo</div>
-        <div className="text-white hidden lg:block mr-8 ">
+        <div className="text-white hidden lg:flex   flex-1 justify-end items-center" >
           {headerData.map((item: any, i: number) => (
             <>
               <Link
                 to={item.path}
                 key={i}
-                className=" no-underline text-sm font-normal mr-7 text-[#D2D5DE]"
+                className=" no-underline text-sm font-bold cursor-pointer text-[#D2D5DE] mr-8"
               >
                 {item.title}
               </Link>{' '}
@@ -46,18 +46,18 @@ function AppHeader() {
           ))}
           <Link
             to="#"
-            className="mr-8 no-underline text-sm rounded-full text-[#FFF] px-4 py-3  bg-[#5B89FF] font-normal ]"
+            className=" no-underline text-sm rounded-full text-[#FFF] px-4 py-3 ml-3  bg-[#5B89FF] font-normal ]"
           >
             Get started
           </Link>
         </div>
 
-        <div className=" lg:hidden ">
+        <div className=" md:hidden flex flex-1 justify-end ">
           <BiMenuAltRight
             onClick={() => {
               setIsOpen(!isOpen)
             }}
-            size={30}
+            size={45}
             color={'white'}
           />
         </div>

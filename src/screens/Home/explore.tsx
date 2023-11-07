@@ -1,44 +1,44 @@
-import { Link } from 'react-router-dom'
-import { CardImage, CardText, CardTitle, SectionTitles , FeatureImg} from './home.style'
 
-interface ICardText {
-  img: string
-  title: string
-  text: string
-  link: string
-}
+import { FeatureImg} from './home.style'
+
+// interface ICardText {
+//   img: string
+//   title: string
+//   text: string
+//   link: string
+// }
 
 function Explore() {
-  const cardText: ICardText[] = [
-    {
-      img: '',
-      title: 'Forex Trading',
-      text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
-            Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
-      link: '#',
-    },
-    {
-      img: '',
-      title: 'Forex Trading',
-      text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
-            Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
-      link: '#',
-    },
-    {
-      img: '',
-      title: 'Forex Trading',
-      text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
-            Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
-      link: '#',
-    },
-    {
-      img: '',
-      title: 'Forex Trading',
-      text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
-            Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
-      link: '#',
-    },
-  ]
+  // const cardText: ICardText[] = [
+  //   {
+  //     img: '',
+  //     title: 'Forex Trading',
+  //     text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
+  //           Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+  //     link: '#',
+  //   },
+  //   {
+  //     img: '',
+  //     title: 'Forex Trading',
+  //     text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
+  //           Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+  //     link: '#',
+  //   },
+  //   {
+  //     img: '',
+  //     title: 'Forex Trading',
+  //     text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
+  //           Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+  //     link: '#',
+  //   },
+  //   {
+  //     img: '',
+  //     title: 'Forex Trading',
+  //     text: `Ligula ullamcorper malesuada proin libero nunc consequat interdum,
+  //           Ligula ullamcorper malesuada proin libero nunc consequat interdum`,
+  //     link: '#',
+  //   },
+  // ]
   return (
     <div className=" lg:grid grid-cols-2  md:py-28 py-20  bg-[#23283a]">
       {/* <SectionTitles>Explore Our Communities</SectionTitles>

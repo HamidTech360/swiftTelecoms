@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom'
 import { BiMenuAltRight } from 'react-icons/bi'
 import { useState } from 'react'
-
+import Drawer from 'react-modern-drawer'
+import 'react-modern-drawer/dist/index.css'
 function AppHeader() {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [isOpen, setisOpen] = useState<boolean>(false)
+
+  const toggleDrawer = () => {
+    setisOpen(!isOpen)
+    console.log('clicked')
+  }
 
   const headerData = [
     {
@@ -32,7 +38,7 @@ function AppHeader() {
     <div>
       <div className="md:py-7 py-5 px-5 lg:px-10 flex">
         <div className="text-white">Swift Telecoms logo</div>
-        <div className="text-white hidden lg:flex   flex-1 justify-end items-center" >
+        <div className="text-white hidden lg:flex   flex-1 justify-end items-center">
           {headerData.map((item: any, i: number) => (
             <>
               <Link
@@ -53,37 +59,30 @@ function AppHeader() {
         </div>
 
         <div className=" md:hidden flex flex-1 justify-end ">
-          <BiMenuAltRight
-            onClick={() => {
-              setIsOpen(!isOpen)
-            }}
-            size={45}
-            color={'white'}
-          />
+          <BiMenuAltRight onClick={toggleDrawer} size={35} color={'white'} />
         </div>
       </div>
-      {isOpen && (
-        <div
-          onClick={() => {
-            setIsOpen(false)
-          }}
-          className="  fixed mb-5  top-0 right-0 w-[50%] md:w-[30%] min-h-full p-5 pt-10 bg-[#23283a]"
-        >
-          {headerData.map((item: any, i: any) => (
+
+      <Drawer
+        open={isOpen}
+        onClose={toggleDrawer}
+        direction="right"
+        className="  py-10 px-7"
+        style={{ backgroundColor: '#23283a' }}
+        duration={700}
+      >
+        {headerData.map((item: any, i: any) => (
+          <div key={i}>
             <Link
-              key={i}
+              className="block  mb-5 no-underline text-[15px] text-[#D2D5DE]   "
               to={item.path}
-              className="block  mb-5 no-underline text-[15px] text-[#D2D5DE] transition-opacity duration-500  "
-              onClick={() => {
-                setIsOpen(!isOpen)
-              }}
+              onClick={() => setisOpen(!isOpen)}
             >
-              {' '}
               {item.title}
             </Link>
-          ))}
-        </div>
-      )}
+          </div>
+        ))}
+      </Drawer>
     </div>
   )
 }
